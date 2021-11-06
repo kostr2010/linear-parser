@@ -21,11 +21,6 @@ struct Ins {
   Opcode opcode = INVALID;
   std::vector<std::string> ids;
   std::vector<int_t> imms;
-
-  std::string ToString() const;
-
-  std::string SerializeINT(const char *s) const;
-  std::string SerializeINT_INT(const char *s) const;
 };
 
 #endif

@@ -19,7 +19,12 @@ void Logic(const Ins &i) {
     std::cout << "taken " << i.imms[0] << " points from debil number "
               << i.imms[1] << "\n";
   } break;
-  case Ins::Opcode::INVALID: {
+  case Ins::Opcode::KEK: {
+    std::cout << "kek " << i.imms[0] << " " << i.imms[1] << " " << i.imms[2]
+              << "\n";
+  } break;
+  case Ins::Opcode::INVALID:
+  default: {
     std::cout << "invalid\n";
   } break;
   }
@@ -33,7 +38,7 @@ int main() {
       "ban 100",        "ban, 1 ",        "ban ",        "ban 1 2 ",
       "add_points 100", "add_points, 1 ", "add_points ", "add_points 1 2 ",
       "add_point 100",  "add_point",      "add_points ", "add_points 1, 2 ",
-  };
+      "kek 1, 2, 3"};
 
   for (const auto &s : cases) {
     res = p.Parse(s);
